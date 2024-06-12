@@ -1,0 +1,64 @@
+/* globals.css */
+
+/* Asegúrate de tener clases globales para tu Header y efectos */
+.bg-gradient-to-b {
+    background: linear-gradient(to bottom, white, #e5e7eb, black);
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .z-10 {
+    z-index: 10;
+  }
+  
+  .hover\:text-red-500:hover {
+    color: #f56565;
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+  
+  .group:hover .group-hover\:text-red-500 {
+    color: #f56565;
+  }
+  
+  .group .group-hover\:opacity-100 {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .block {
+    display: block;
+  }
+  
+  .hover\:bg-black:hover {
+    background-color: black;
+  }
+  
+  .hover\:text-white:hover {
+    color: white;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  
+  .p-2 {
+    padding: 0.5rem;
+  }
+  
+
+  
