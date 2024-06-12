@@ -31,3 +31,20 @@ body {
     text-wrap: balance;
   }
 }
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
