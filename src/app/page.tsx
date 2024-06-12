@@ -12,11 +12,11 @@ export default function Home() {
           <br></br>
           <hr></hr>
           <br></br>
-          <AboutDev/>
+          <Places/>
           <br></br>
           <hr></hr>
           <br></br>
-          <Places/>
+          <AboutDev/>
           <br></br>
           <hr></hr>
           <br></br>
