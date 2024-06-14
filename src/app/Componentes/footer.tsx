@@ -4,17 +4,17 @@ import Link from 'next/link';
 const Footer = () => {
     return (
         <footer className="footer">
-            <Link href="tel:+1234567890" legacyBehavior>
-                <a>Teléfono</a>
-            </Link> |
-            <Link href="https://instagram.com/Tony_barra09" legacyBehavior>
-                <a target="_blank">Instagram</a>
-            </Link> |
-            <Link href="https://facebook.com/Tony_barra09" legacyBehavior>
-                <a>Facebook</a>
-            </Link> |
-            <Link href="https://twitter.com/Tony_barra09" legacyBehavior>
-                <a target="_blank">Twitter</a>
+            <Link href="https://wa.me/" legacyBehavior>
+                <a><img src="/red_social/whatsapp.png" alt="WhatsApp" className="footer-logo1" /></a>
+            </Link> 
+            <Link href="https://instagram.com/" legacyBehavior>
+                <a><img src="/red_social/instagram.png" alt="Instagram" className="footer-logo2" /></a>
+            </Link> 
+            <Link href="https://facebook.com/" legacyBehavior>
+                <a><img src="/red_social/facebook.png" alt="Facebook" className="footer-logo3" /></a>
+            </Link> 
+            <Link href="mailto:" legacyBehavior>
+                <a><img src="/red_social/correo.png" alt="Correo" className="footer-logo4" /></a>
             </Link>
         </footer>
     );
