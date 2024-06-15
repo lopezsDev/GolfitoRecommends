@@ -31,3 +31,42 @@ body {
     text-wrap: balance;
   }
 }
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-top: 1px solid #e9ecef;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  gap: 15px; 
+}
+
+.footer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo1 {
+  width: 30px; 
+  height: 30px; 
+}
+
+.footer-logo2 {
+  width: 30px; 
+  height: 30px; 
+}
+
+.footer-logo3 {
+  width: 30px; 
+  height: 30px; 
+}
+
+.footer-logo4 {
+  width: 26px; 
+  height: 26px; 
+}
