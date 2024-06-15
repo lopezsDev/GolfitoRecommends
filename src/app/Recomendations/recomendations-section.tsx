@@ -2,8 +2,8 @@
 
 import { useRouter } from 'next/navigation';
 
-import Container from '@/Componentes/container';
-import Title from '@/Componentes/title';
+import Container from '@/app/Componentes/container';
+import Title from '@/app/Componentes/title';
 import ListRecomendations from './list-Recomendations';
 
 const RecomendationsSection = () => {

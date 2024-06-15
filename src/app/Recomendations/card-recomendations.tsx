@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Badge from '@/Componentes/badge';
+import Badge from '@/app/Componentes/badge';
 
 interface CardRecomendationsProps {
   href: string;
