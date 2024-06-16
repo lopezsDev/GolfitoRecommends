@@ -7,6 +7,8 @@ interface CardRecomendationsProps {
   image: string;
   category: string;
   title: string;
+  rating: number;
+  metadata: string;
 }
 
 const CardRecomendations = ({
@@ -14,6 +16,8 @@ const CardRecomendations = ({
   image,
   category,
   title,
+  rating,
+  metadata,
 }: CardRecomendationsProps) => {
   return (
     <Link href={href} className='group'>
@@ -29,6 +33,8 @@ const CardRecomendations = ({
       <h3 className='text-xl text-white group-hover:text-primary transition-colors duration-300'>
         {title}
       </h3>
+      <p className='text-sm text-gray-400'>Calificación: {rating} / 5</p>
+      <p className='text-sm text-gray-400'>{metadata}</p>
     </Link>
     
   );

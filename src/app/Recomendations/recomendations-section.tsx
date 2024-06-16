@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 
 import Container from '@/app/Componentes/container';
 import Title from '@/app/Componentes/title';
-import ListRecomendations from './list-Recomendations';
+import ListRecomendations from '@/app/Recomendations/list-Recomendations';
 
 const RecomendationsSection = () => {
   const router = useRouter();
