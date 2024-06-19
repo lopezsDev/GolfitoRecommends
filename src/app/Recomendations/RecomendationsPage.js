@@ -23,7 +23,7 @@ const RecomendationsPage = () => {
 
             const request = {
               location: new google.maps.LatLng(latitude, longitude),
-              radius: '5000',
+              radius: '2000',
               type: ['point_of_interest']
             };
 
@@ -84,7 +84,7 @@ const RecomendationsPage = () => {
         <select 
           value={selectedCategory} 
           onChange={(e) => setSelectedCategory(e.target.value)}
-          className="p-2 border rounded"
+          className="p-2 border rounded text-sm text-gray-800"
         >
           <option value="all">Todas las categorías</option>
           <option value="amusement_park">Entretenimiento</option>
