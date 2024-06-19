@@ -23,7 +23,7 @@ const RecomendationsPage = () => {
 
             const request = {
               location: new google.maps.LatLng(latitude, longitude),
-              radius: '2000',
+              radius: '3000',
               type: ['point_of_interest']
             };
 
