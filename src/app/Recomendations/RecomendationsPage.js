@@ -2,60 +2,26 @@
 
 import React, { useEffect, useState } from 'react';
 import CardRecomendations from '@/app/Recomendations/card-recomendations';
+import fetchNearbyPlaces from './fetchNearbyPlaces'; 
 
 const RecomendationsPage = () => {
   const [places, setPlaces] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   useEffect(() => {
-    const fetchNearbyPlaces = async () => {
+    const getPlaces = async () => {
       try {
         navigator.geolocation.getCurrentPosition(async (position) => {
           const { latitude, longitude } = position.coords;
-
-          const googleMapsScript = document.createElement('script');
-          googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&libraries=places`;
-          googleMapsScript.async = true;
-          document.head.appendChild(googleMapsScript);
-
-          googleMapsScript.onload = () => {
-            const service = new google.maps.places.PlacesService(document.createElement('div'));
-
-            const request = {
-              location: new google.maps.LatLng(latitude, longitude),
-              radius: '3000',
-              type: ['point_of_interest']
-            };
-
-            service.nearbySearch(request, (results, status) => {
-              if (status === google.maps.places.PlacesServiceStatus.OK) {
-                const detailedPlaces = results.map(place => {
-                  return new Promise((resolve) => {
-                    service.getDetails({ placeId: place.place_id }, (placeDetails, detailStatus) => {
-                      if (detailStatus === google.maps.places.PlacesServiceStatus.OK) {
-                        resolve({
-                          ...place,
-                          details: placeDetails
-                        });
-                      } else {
-                        resolve(place);
-                      }
-                    });
-                  });
-                });
-
-                Promise.all(detailedPlaces).then(setPlaces);
-              }
-            });
-          };
+          const places = await fetchNearbyPlaces(latitude, longitude);
+          setPlaces(places);
         });
-        setRepos(response.data);
       } catch (error) {
         console.error('Error al obtener lugares cercanos:', error);
       }
     };
 
-    fetchNearbyPlaces();
+    getPlaces();
   }, []);
 
   const getCategoryName = (types) => {
@@ -99,12 +65,12 @@ const RecomendationsPage = () => {
         {filteredPlaces.map(place => (
           <CardRecomendations
             key={place.place_id}
-            href={`/place/${place.place_id}`}
-            image={place.photos ? place.photos[0].getUrl() : '/placeholder.png'}
+            href={place.place_id ? `/place/${place.place_id}` : '#'}
+            image={place.photos && place.photos.length > 0 ? place.photos[0].getUrl() : '/placeholder.png'}
             category={getCategoryName(place.types)}
             title={place.name}
             rating={place.rating}
-            metadata={`${place.details?.formatted_phone_number || 'No disponible'}`}
+            metadata={`${place.details && place.details.formatted_phone_number ? place.details.formatted_phone_number : 'No disponible'}`}
           />
         ))}
       </div>
