@@ -70,7 +70,7 @@ const RecomendationsPage = () => {
             category={getCategoryName(place.types)}
             title={place.name}
             rating={place.rating}
-            metadata={`${place.details && place.details.formatted_phone_number ? place.details.formatted_phone_number : 'No disponible'}`}
+            metadata={place.details && place.details.formatted_phone_number ? place.details.formatted_phone_number : 'No disponible'}
           />
         ))}
       </div>
