@@ -1,6 +1,5 @@
 import RecomendationsPage from '@/app/Recomendations/RecomendationsPage';
 
-
 const ListCardRecomendations = () => {
   return (
     <div className='grid grid-cols-1 sm:grid-cols-10 lg:grid-cols-1 gap-10 mb-10'>
