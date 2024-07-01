@@ -2,7 +2,8 @@ import React from 'react';
 import Link from "next/link"
 
 // Definición de los tipos de props para los iconos
-interface IconProps extends React.SVGProps<SVGSVGElement> {}
+interface IconProps extends React.SVGProps<SVGSVGElement> {
+}
 
 // Componente Icono de Facebook
 function FacebookIcon(props: IconProps) {
