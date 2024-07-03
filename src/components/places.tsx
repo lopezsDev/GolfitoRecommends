@@ -1,3 +1,4 @@
+// Places.tsx
 'use client'
 
 import React, { useEffect, useState } from "react";
@@ -10,25 +11,22 @@ interface Place {
     place_id: string;
     name: string;
     formatted_address: string;
-    image: string | null;
+    photos?: { photo_reference: string }[];
     rating?: number;
     types?: string[];
 }
 
 export default function Places() {
     const [locations, setLocations] = useState<Place[]>([]);
-    const [seenIds, setSeenIds] = useState(new Set());
     const [activeIndex, setActiveIndex] = useState(0);
     const [expandedCard, setExpandedCard] = useState<string | null>(null);
     const [nextPageToken, setNextPageToken] = useState<string | null>(null);
 
     const fetchPlaces = async (pagetoken?: string) => {
-        const url = `/api/places${pagetoken ? '?pagetoken=' + pagetoken : ''}`;
+        const url = `/api/places?location=Golfito${pagetoken ? '&pagetoken=' + pagetoken : ''}`;
         const response = await fetch(url);
         const data = await response.json();
-        const newPlaces = data.results.filter((place: Place) => !seenIds.has(place.place_id));
-        newPlaces.forEach((place: Place) => seenIds.add(place.place_id));
-        setLocations(prev => [...prev, ...newPlaces]);
+        setLocations(prev => [...prev, ...data.results]);
         setNextPageToken(data.next_page_token);
     };
 
@@ -69,7 +67,7 @@ export default function Places() {
                             <div key={location.place_id} className={`flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 md:px-6 py-4 transition-transform duration-300 ease-in-out ${expandedCard === location.place_id ? "scale-110 z-10" : "hover:scale-105"}`} onClick={() => handleCardClick(location.place_id)}>
                                 <Card className="h-full">
                                     <CardContent className="flex flex-col gap-4">
-                                        <img src={location.image || '/default-image.jpg'} alt={location.name} className="rounded-lg object-cover w-full aspect-[4/3]" />
+                                        <img src={location.photos?.[0]?.photo_reference || '/default-image.jpg'} alt={location.name} className="rounded-lg object-cover w-full aspect-[4/3]" />
                                         <div className="grid gap-2">
                                             <h3 className="text-lg font-semibold">{location.name}</h3>
                                             <p className="text-muted-foreground">{location.formatted_address}</p>
