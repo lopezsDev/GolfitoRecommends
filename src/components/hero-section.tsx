@@ -16,7 +16,7 @@ export function HeroSection() {
                             <p className="max-w-[600px] text-muted-foreground md:text-xl">
                                 Explore, discover and enjoy. Our platform guides you to the best places near you,
                                 from restaurants and bars to parks and museums - start your next local adventure with us
-                                today!
+                                today hello!
                             </p>
                         </div>
                         <div className="w-full max-w-sm space-y-2 ml-12">
