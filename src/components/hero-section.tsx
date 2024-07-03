@@ -1,6 +1,7 @@
-import {Input} from "@/components/ui/input"
-import {Button} from "@/components/ui/button"
-import Link from "next/link"
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Image from "next/image";
 
 export function HeroSection() {
     return (
@@ -20,7 +21,7 @@ export function HeroSection() {
                         </div>
                         <div className="w-full max-w-sm space-y-2">
                             <form className="flex gap-2">
-                                <Input type="email" placeholder="Enter your email" className="max-w-lg flex-1"/>
+                                <Input type="email" placeholder="Enter your email" className="max-w-lg flex-1" />
                                 <Button type="submit">Get Started</Button>
                             </form>
                             <p className="text-xs text-muted-foreground">
@@ -31,17 +32,17 @@ export function HeroSection() {
                             </p>
                         </div>
                     </div>
-                    <img
+                    <Image
                         src="/placeholder.svg"
-                        width="550"
-                        height="550"
+                        width={550}
+                        height={550}
                         alt="Hero"
                         className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full lg:order-last"
                     />
                 </div>
             </div>
         </section>
-    )
+    );
 }
 
 export default HeroSection;
