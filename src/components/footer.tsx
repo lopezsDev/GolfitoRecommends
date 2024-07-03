@@ -11,8 +11,8 @@ function FacebookIcon(props: IconProps) {
       <svg
           {...props}
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="35"
+          height="35"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -20,6 +20,7 @@ function FacebookIcon(props: IconProps) {
           strokeLinecap="round"
           strokeLinejoin="round"
       >
+        
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
       </svg>
   );
@@ -111,32 +112,29 @@ function TwitterIcon(props: IconProps) {
 // Componente Footer con todos los iconos
 export function Footer() {
   return (
-      <footer className="bg-muted py-6 w-full">
+      <footer className="bg-muted py-6 w-full ml-20">
         <div className="container flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <Link href="#" aria-label="WhatsApp" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              <PhoneIcon className="h-5 w-5" />
-            </Link>
             <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              <FacebookIcon className="h-5 w-5" />
+              <FacebookIcon className="h-8 w-8" />
             </Link>
             <Link
                 href="#"
                 aria-label="Instagram"
                 className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              <InstagramIcon className="h-5 w-5" />
+              <InstagramIcon className="h-8 w-8" />
             </Link>
             <Link href="#" aria-label="TikTok" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              <TwitterIcon className="h-5 w-5" />
+              <TwitterIcon className="h-8 w-8" />
             </Link>
             <Link href="#" aria-label="Email" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              <MailIcon className="h-5 w-5" />
+              <MailIcon className="h-8 w-8" />
             </Link>
             <Link href="#" aria-label="Phone" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              <PhoneIcon className="h-5 w-5" />
+              <PhoneIcon className="h-8 w-8" />
             </Link>
           </div>
-          <div className="text-center text-muted-foreground">All rights reserved</div>
+          <div className="text-center text-muted-foreground"> © All rights reserved</div>
         </div>
       </footer>
   );

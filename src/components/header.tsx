@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import {
     NavigationMenu,
@@ -7,7 +8,7 @@ import {
     NavigationMenuTrigger,
     NavigationMenuContent
 } from "@/components/ui/navigation-menu"
-import {Button} from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 
 // Definición de los tipos de props para los iconos
 interface IconProps extends React.SVGProps<SVGSVGElement> {
@@ -32,13 +33,12 @@ function MountainIcon(props: IconProps) {
     )
 }
 
-
-export function header() {
+export function Header() {
     return (
         <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
             <div className="w-[150px]">
                 <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-                    <MountainIcon className="h-6 w-6"/>
+                    <MountainIcon className="h-10 w-8"/>
                     <span className="sr-only">Acme Inc</span>
                 </Link>
             </div>
@@ -48,26 +48,26 @@ export function header() {
                         <NavigationMenuLink asChild>
                             <Link
                                 href="#"
-                                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                 prefetch={false}
                             >
                                 Home
                             </Link>
                         </NavigationMenuLink>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger>Features</NavigationMenuTrigger>
+                            <NavigationMenuTrigger className="text-lg font-medium">Features</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <div className="grid w-[400px] p-2">
                                     <NavigationMenuLink asChild>
                                         <Link
                                             href="#"
-                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                             prefetch={false}
                                         >
                                             <div
-                                                className="text-sm font-medium leading-none group-hover:underline">Analytics
+                                                className="text-lg font-medium leading-none group-hover:underline">Analytics
                                             </div>
-                                            <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                            <div className="line-clamp-2 text-lg leading-snug text-muted-foreground">
                                                 Upgrade your reporting with advanced analytics.
                                             </div>
                                         </Link>
@@ -75,14 +75,14 @@ export function header() {
                                     <NavigationMenuLink asChild>
                                         <Link
                                             href="#"
-                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                             prefetch={false}
                                         >
                                             <div
-                                                className="text-sm font-medium leading-none group-hover:underline">Developer
+                                                className="text-lg font-medium leading-none group-hover:underline">Developer
                                                 Tools
                                             </div>
-                                            <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                            <div className="line-clamp-2 text-lg leading-snug text-muted-foreground">
                                                 Extend your application with our developer tools.
                                             </div>
                                         </Link>
@@ -90,13 +90,13 @@ export function header() {
                                     <NavigationMenuLink asChild>
                                         <Link
                                             href="#"
-                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                             prefetch={false}
                                         >
-                                            <div className="text-sm font-medium leading-none group-hover:underline">
+                                            <div className="text-lg font-medium leading-none group-hover:underline">
                                                 Security &amp; Compliance
                                             </div>
-                                            <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                            <div className="line-clamp-2 text-lg leading-snug text-muted-foreground">
                                                 Keep your data secure with our security features.
                                             </div>
                                         </Link>
@@ -104,13 +104,13 @@ export function header() {
                                     <NavigationMenuLink asChild>
                                         <Link
                                             href="#"
-                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                             prefetch={false}
                                         >
                                             <div
-                                                className="text-sm font-medium leading-none group-hover:underline">Scalability
+                                                className="text-lg font-medium leading-none group-hover:underline">Scalability
                                             </div>
-                                            <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                            <div className="line-clamp-2 text-lg leading-snug text-muted-foreground">
                                                 Scale your application with our infrastructure.
                                             </div>
                                         </Link>
@@ -121,26 +121,26 @@ export function header() {
                         <NavigationMenuLink asChild>
                             <Link
                                 href="#"
-                                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                 prefetch={false}
                             >
                                 Pricing
                             </Link>
                         </NavigationMenuLink>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+                            <NavigationMenuTrigger className="text-lg font-medium">Resources</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <div className="grid w-[550px] grid-cols-2 p-2">
                                     <NavigationMenuLink asChild>
                                         <Link
                                             href="#"
-                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                             prefetch={false}
                                         >
-                                            <div className="text-sm font-medium leading-none group-hover:underline">Blog
+                                            <div className="text-lg font-medium leading-none group-hover:underline">Blog
                                                 Posts
                                             </div>
-                                            <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                            <div className="line-clamp-2 text-lg leading-snug text-muted-foreground">
                                                 Read our latest blog posts.
                                             </div>
                                         </Link>
@@ -148,13 +148,13 @@ export function header() {
                                     <NavigationMenuLink asChild>
                                         <Link
                                             href="#"
-                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                             prefetch={false}
                                         >
-                                            <div className="text-sm font-medium leading-none group-hover:underline">Case
+                                            <div className="text-lg font-medium leading-none group-hover:underline">Case
                                                 Studies
                                             </div>
-                                            <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                            <div className="line-clamp-2 text-lg leading-snug text-muted-foreground">
                                                 Read our customer case studies.
                                             </div>
                                         </Link>
@@ -162,13 +162,13 @@ export function header() {
                                     <NavigationMenuLink asChild>
                                         <Link
                                             href="#"
-                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                             prefetch={false}
                                         >
                                             <div
-                                                className="text-sm font-medium leading-none group-hover:underline">Documentation
+                                                className="text-lg font-medium leading-none group-hover:underline">Documentation
                                             </div>
-                                            <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                            <div className="line-clamp-2 text-lg leading-snug text-muted-foreground">
                                                 Learn how to use our product.
                                             </div>
                                         </Link>
@@ -176,13 +176,15 @@ export function header() {
                                     <NavigationMenuLink asChild>
                                         <Link
                                             href="#"
-                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md
+
+ bg-background p-4 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                             prefetch={false}
                                         >
-                                            <div className="text-sm font-medium leading-none group-hover:underline">Help
+                                            <div className="text-lg font-medium leading-none group-hover:underline">Help
                                                 Center
                                             </div>
-                                            <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                            <div className="line-clamp-2 text-lg leading-snug text-muted-foreground">
                                                 Get help with our product.
                                             </div>
                                         </Link>
@@ -193,7 +195,7 @@ export function header() {
                         <NavigationMenuLink asChild>
                             <Link
                                 href="#"
-                                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-lg font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                 prefetch={false}
                             >
                                 Contact
@@ -203,11 +205,12 @@ export function header() {
                 </NavigationMenu>
             </div>
             <div className="ml-auto w-[150px]">
-                <Button>Get Started</Button>
+                <Button className="text-lg font-medium">Get Started</Button>
             </div>
-            {" "}
         </header>
     )
 }
 
-export default header;
+export default Header;
+
+

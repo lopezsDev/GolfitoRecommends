@@ -9,7 +9,7 @@ export function HeroSection() {
             <div className="container px-4 md:px-6">
                 <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
                     <div className="flex flex-col justify-center space-y-4">
-                        <div className="space-y-2">
+                        <div className="space-y-2 ml-12">
                             <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                                 Golfito Remmendations
                             </h1>
@@ -19,7 +19,7 @@ export function HeroSection() {
                                 today!
                             </p>
                         </div>
-                        <div className="w-full max-w-sm space-y-2">
+                        <div className="w-full max-w-sm space-y-2 ml-12">
                             <form className="flex gap-2">
                                 <Input type="email" placeholder="Enter your email" className="max-w-lg flex-1" />
                                 <Button type="submit">Get Started</Button>
