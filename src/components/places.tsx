@@ -15,6 +15,8 @@ interface Place {
     types?: string[];
 }
 
+const DEFAULT_IMAGE = 'not found.png';
+
 export default function Places() {
     const [locations, setLocations] = useState<Place[]>([]);
     const [seenIds, setSeenIds] = useState(new Set());
@@ -46,8 +48,9 @@ export default function Places() {
         setExpandedCard(null);
     };
 
-    const handleCardClick = (id: string) => {
+    const handleCardClick = (id: string, index: number) => {
         setExpandedCard(expandedCard === id ? null : id);
+        setActiveIndex(index);
     };
 
     const loadMore = () => {
@@ -65,16 +68,27 @@ export default function Places() {
                 </Button>
                 <div className="flex-1 overflow-hidden">
                     <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-                        {locations.map((location) => (
-                            <div key={location.place_id} className={`flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 md:px-6 py-4 transition-transform duration-300 ease-in-out ${expandedCard === location.place_id ? "scale-110 z-10" : "hover:scale-105"}`} onClick={() => handleCardClick(location.place_id)}>
-                                <Card className="h-full">
+                        {locations.map((location, index) => (
+                            <div key={location.place_id} 
+                                 className={`flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 md:px-6 py-4 transition-all duration-300 ease-in-out 
+                                             ${expandedCard === location.place_id ? "scale-110 z-10" : "hover:scale-105"}`} 
+                                 onClick={() => handleCardClick(location.place_id, index)}>
+                                <Card className={`h-full overflow-hidden ${expandedCard === location.place_id ? "bg-gray-100" : ""}`}>
                                     <CardContent className="flex flex-col gap-4">
-                                        <img src={location.image || '/default-image.jpg'} alt={location.name} className="rounded-lg object-cover w-full aspect-[4/3]" />
+                                        <img 
+                                            src={location.image || DEFAULT_IMAGE} 
+                                            alt={location.name} 
+                                            className="rounded-lg object-cover w-full aspect-[4/3]" 
+                                        />
                                         <div className="grid gap-2">
                                             <h3 className="text-lg font-semibold">{location.name}</h3>
                                             <p className="text-muted-foreground">{location.formatted_address}</p>
-                                            {location.rating && <p>Rating: {location.rating}</p>}
-                                            {location.types && <p>Types: {location.types.join(', ')}</p>}
+                                            {expandedCard === location.place_id && (
+                                                <>
+                                                    {location.rating && <p>Rating: {location.rating}</p>}
+                                                    {location.types && <p>Types: {location.types.join(', ')}</p>}
+                                                </>
+                                            )}
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -86,12 +100,12 @@ export default function Places() {
                     <ChevronRightIcon className="h-6 w-6" />
                     <span className="sr-only">Next</span>
                 </Button>
-                {nextPageToken && (
-                    <Button onClick={loadMore} className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Load More
-                    </Button>
-                )}
             </div>
+            {nextPageToken && (
+                <Button onClick={loadMore} className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Load More
+                </Button>
+            )}
         </div>
     );
 }

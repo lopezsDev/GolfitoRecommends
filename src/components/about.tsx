@@ -22,8 +22,8 @@ export function About() {
     }, []);
 
     return (
-        <section className="w-full py-12 md:py-24 lg:py-32 ml-40"> 
-            <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10 pl-40"> 
+        <section className="w-full py-12 md:py-24 lg:py-32 ml-40">
+            <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10 pl-40">
                 <div className="relative w-full h-96 mx-auto aspect-[4/3] overflow-hidden rounded-xl object-cover object-center sm:aspect-video">
                     <Image
                         src={images[currentImage]}

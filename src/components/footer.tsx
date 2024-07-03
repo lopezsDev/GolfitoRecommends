@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from "next/link"
+import Link from "next/link";
 
 // Definición de los tipos de props para los iconos
 interface IconProps extends React.SVGProps<SVGSVGElement> {
@@ -112,8 +112,8 @@ function TwitterIcon(props: IconProps) {
 // Componente Footer con todos los iconos
 export function Footer() {
   return (
-      <footer className="bg-muted py-6 w-full ml-20">
-        <div className="container flex items-center justify-between gap-4">
+      <footer className="bg-light-cyan w-full">
+        <div className="container mx-auto flex items-center justify-between gap-4 h-20 px-4 md:px-6">
           <div className="flex items-center gap-4">
             <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-foreground" prefetch={false}>
               <FacebookIcon className="h-8 w-8" />
@@ -124,7 +124,7 @@ export function Footer() {
                 className="text-muted-foreground hover:text-foreground" prefetch={false}>
               <InstagramIcon className="h-8 w-8" />
             </Link>
-            <Link href="#" aria-label="TikTok" className="text-muted-foreground hover:text-foreground" prefetch={false}>
+            <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-foreground" prefetch={false}>
               <TwitterIcon className="h-8 w-8" />
             </Link>
             <Link href="#" aria-label="Email" className="text-muted-foreground hover:text-foreground" prefetch={false}>
@@ -134,7 +134,7 @@ export function Footer() {
               <PhoneIcon className="h-8 w-8" />
             </Link>
           </div>
-          <div className="text-center text-muted-foreground"> © All rights reserved</div>
+          <span>© All rights reserved</span>
         </div>
       </footer>
   );

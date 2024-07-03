@@ -64,7 +64,7 @@ const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-25 pt-0", className)} {...props}>
+  <div ref={ref} className={cn("p-25 pt-0 rounded-lg", className)} {...props}>
     {React.Children.map(props.children, child => {
       if (React.isValidElement(child) && child.type === 'img') {
         return React.cloneElement(child, {
@@ -90,17 +90,6 @@ const CardFooter = React.forwardRef<
 CardFooter.displayName = "CardFooter"
 
 
-const CardImage = React.forwardRef<
-  HTMLImageElement,
-  React.ImgHTMLAttributes<HTMLImageElement>
->(({ className, ...props }, ref) => (
-  <img
-    ref={ref}
-    className={cn("rounded-lg", className)}
-    {...props}
-  />
-))
-CardImage.displayName = "CardImage"
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent, CardImage }
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 
