@@ -13,7 +13,7 @@ app.prepare().then(() => {
     server.use(express.json());
 
     server.get('/api/places', async (req, res) => {
-        const { location = '8.637647754996475, -83.1572153212034', pagetoken } = req.query;  // Usar coordenadas para Golfito
+        const { location = '8.6219,-83.1523', pagetoken } = req.query;  // Usar coordenadas para Golfito
         try {
             const params = {
                 location, // Usar coordenadas para especificar el centro de búsqueda
