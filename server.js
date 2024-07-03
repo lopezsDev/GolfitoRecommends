@@ -17,7 +17,7 @@ app.prepare().then(() => {
         try {
             const params = {
                 location, // Usar coordenadas para especificar el centro de búsqueda
-                radius: '60000', // Radio de 60 km
+                radius: '10000', // Radio de 60 km
                 key: process.env.NEXT_PUBLIC_MAPS_API_KEY
             };
             if (pagetoken) {
