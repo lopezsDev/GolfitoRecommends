@@ -50,7 +50,6 @@ export default function Places() {
 
     const handleCardClick = (id: string, index: number) => {
         setExpandedCard(expandedCard === id ? null : id);
-        setActiveIndex(index);
     };
 
     const loadMore = () => {
