@@ -8,7 +8,8 @@ import React from "react";
 
 export default function Home() {
     return (
-        <div className="bg-celeste"> 
+        <div className="bg-[#000020] text-black">
+
             <Header/>
 
             <HeroSection/>
