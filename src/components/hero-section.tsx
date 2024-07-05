@@ -10,10 +10,10 @@ export function HeroSection() {
                 <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
                     <div className="flex flex-col justify-center space-y-12">
                         <div className="space-y-2 ml-12">
-                            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-black">
                                 Golfito Remmendations
                             </h1>
-                            <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                            <p className="max-w-[600px] text-black md:text-xl">
                                 Explore, discover and enjoy. Our platform guides you to the best places near you,
                                 from restaurants and bars to parks and museums - start your next local adventure with us
                                 today!
@@ -24,9 +24,9 @@ export function HeroSection() {
                                 <Input type="email" placeholder="Enter your email" className="max-w-lg flex-1" />
                                 <Button type="submit">Get Started</Button>
                             </form>
-                            <p className="text-xs text-muted-foreground">
+                            <p className="text-xs text-black">
                                 Sign up to unlock the full potential of our platform.{" "}
-                                <Link href="#" className="underline underline-offset-2" prefetch={false}>
+                                <Link href="#" className="underline underline-offset-2 text-black" prefetch={false}>
                                     Terms &amp; Conditions
                                 </Link>
                             </p>
