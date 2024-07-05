@@ -64,12 +64,12 @@ const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-25 pt-0 rounded-lg", className)} {...props}>
+  <div ref={ref} className={cn("p-25 pt-0", className)} {...props}>
     {React.Children.map(props.children, child => {
       if (React.isValidElement(child) && child.type === 'img') {
         return React.cloneElement(child, {
-         // className: cn('rounded-lg', child.props.className)
-        });
+          className: cn('rounded-lg w-full h-full object-cover', (child.props as any).className)
+        } as React.HTMLAttributes<HTMLImageElement>);
       }
       return child;
     })}

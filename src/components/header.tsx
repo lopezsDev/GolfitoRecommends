@@ -32,10 +32,12 @@ function MountainIcon(props: IconProps) {
 
 export function Header() {
     return (
+
         <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-light-cyan">
             <div className="flex items-center w-full space-x-4">
                 <Link href="#" className="hidden lg:flex items-center" prefetch={false}>
                     <MountainIcon className="h-10 w-8" />
+
                     <span className="sr-only">Acme Inc</span>
                 </Link>
                 <NavigationMenu className="hidden lg:flex">
