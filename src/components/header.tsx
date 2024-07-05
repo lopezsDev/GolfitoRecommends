@@ -1,5 +1,5 @@
-
 import Link from "next/link";
+import Image from "next/image";
 import {
     NavigationMenu,
     NavigationMenuList,
@@ -8,36 +8,26 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 
-// Definición de los tipos de props para los iconos
-interface IconProps extends React.SVGProps<SVGSVGElement> {}
-
-function MountainIcon(props: IconProps) {
+// Componente AppLogo actualizado para utilizar correctamente Image de Next.js
+function AppLogo() {
     return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-        </svg>
+        <div className="h-32 w-20 relative">
+            <Image
+                src="/Golfologo.png"
+                alt="Golfologo"
+                layout="fill"
+                objectFit="contain"
+            />
+        </div>
     );
 }
 
 export function Header() {
     return (
-
         <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-light-cyan">
             <div className="flex items-center w-full space-x-4">
                 <Link href="#" className="hidden lg:flex items-center" prefetch={false}>
-                    <MountainIcon className="h-10 w-8" />
-
+                    <AppLogo />
                     <span className="sr-only">Acme Inc</span>
                 </Link>
                 <NavigationMenu className="hidden lg:flex">
