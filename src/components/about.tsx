@@ -37,8 +37,8 @@ export function About() {
                 </div>
                 <div className="space-y-4">
                     <div className="space-y-2">
-                        <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">About Our Company</h2>
-                        <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    <h2 className="text-3xl font-bold tracking-tighter md:text-4xl text-blue-900">About Our Company</h2>
+                        <p className="max-w-[600px] text-gray-800 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                             The app discovers and recommends the best destinations in Golfito, from serene beaches to
                             vibrant restaurants, cozy hotels and exciting adventures in national parks. Designed to personalize the user
                             experience, the app provides recommendations tailored to individual tastes and preferences, covering all types
